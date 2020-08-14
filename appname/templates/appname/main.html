@@ -2,7 +2,7 @@
 
 {% block header %}
 <header class="text-center text-white">
-  <div class="" style="background-image: url('https://cutewallpaper.org/21/instagram-logo-wallpapers/Instagram-Logo-Wallpapers-Wallpaper-Cave.jpg'); background-size: 100% 100%;">
+  <div class="" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSotWUoRbP-_g6j3_OZvvI7VmFflWtMqY0RRQ&usqp=CAU'); background-size: 100% 100%;">
   <div class="masthead-content">
     <div class="container">
       <br>
@@ -13,11 +13,11 @@
       <br>
       <h1 class="masthead-heading mb-0">Myinstagram</h1>
       {% if user.is_authenticated %}
-      <h2 class="masthead-subheading mb-0"><br><br><br> Hello! {{ user.username }} <br><br><br><br><br></h2>
-      <a href="{% url 'logout' %}" class="btn btn-primary btn-xl rounded-pill mt-5" style="color: white;">sign out</a>
+      <h2 class="masthead-subheading mb-0"><br> Hello! {{ user.username }} <br><br><br><br><br></h2>
+      <a href="{% url 'logout' %}" class="btn btn-light btn-xl mt-5">sign out</a>
       {% else %}
       <h2 class="masthead-subheading mb-0">Hi! First Sign in please.</h2>
-      <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'signup' %}">Sign up</a>
+      <a class="btn btn-light btn-xl mt-5" href="{% url 'signup' %}">Sign up</a>
       <br>
       <br>
 
@@ -27,14 +27,14 @@
       <form method="POST" action="/signin">
       {% csrf_token %}
       {{ signin_form.as_p }}
-      <button type="submit" class="btn btn-dark">LOG IN</button>
+      <button type="submit" class="btn btn-secondary">LOG IN</button>
       </form>
       </div>
       </div>
       </div>
     
       {% endif %}
-    <a href="/create" class="btn btn-primary btn-xl rounded-pill mt-5">POST UPLOAD</a>
+    <a href="/create" class="btn btn-light btn-xl mt-5">POST UPLOAD</a>
   </div>
   <br>
   <br>
