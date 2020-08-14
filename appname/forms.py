@@ -37,6 +37,12 @@ class UserForm(forms.ModelForm):
         fields = ['username', 'email', 'password', 'nickname', 'phone_number']
 
 class CommentForm(forms.ModelForm):
+    text = forms.ModelChoiceField(
+        queryset = Comment.objects.all(),
+        label = "comment",
+        required = False,
+        widget = forms.TextInput(attrs={'class':'form-control'})
+    )
     class Meta:
         model = Comment
         fields = ['text']
