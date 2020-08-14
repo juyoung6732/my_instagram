@@ -77,7 +77,7 @@
           <button type="button" class="btn btn-light"><a href="{% url 'delete' pk=post.pk %}" style="color: black;"> Delete </a></button>
         </div>
       
-        <p>좋아요 {{ post.likes.count }}개</p>
+        <h5>좋아요 {{ post.likes.count }}개</h5>
 
         <a href="{% url 'like' pk=post.pk %}">
         {% if user in post.likes.all %}
@@ -111,7 +111,7 @@
         </form>
         <br>
         {% for comment in post.comments.all %}
-          <p>{{ comment.c_writer }} : {{ comment.text }}</p>
+          <h5>{{ comment.c_writer }} : {{ comment.text }}</h5>
         {% endfor %}
 
       </div>
